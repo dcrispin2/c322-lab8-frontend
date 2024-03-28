@@ -65,6 +65,11 @@
             let response = await fetch(host + "/signup", request);
             if(response.status == 200) {
                 window.location.href='login.html'
+
+            } else if(response.status == 503) {
+                console.log(response);
+                message = "Database error";
+                console.log(message);
             } else {
                 console.log(response);
                 message = "Something went wrong. Please try again later.";
